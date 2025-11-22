@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuracion basica del documento HTML -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio 3D Profesional</title>
+    
+    <!-- Importacion de librerias externas desde CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Archivo de estilos personalizado -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
+    <!-- BARRA DE NAVEGACION - Fija en la parte superior -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
+            <!-- Logo con simbolos de codigo -->
             <a href="#home" class="logo">
                 <span class="logo-bracket">&lt;</span>
                 Portafolio
                 <span class="logo-bracket">/&gt;</span>
             </a>
             
+            <!-- Menu de navegacion principal -->
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Inicio</a>
                 <a href="#about" class="nav-link">Sobre Mi</a>
@@ -27,6 +35,7 @@
                 <a href="#contact" class="nav-link">Contacto</a>
             </div>
             
+            <!-- Boton de menu responsive para dispositivos moviles -->
             <button class="mobile-toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
@@ -35,19 +44,30 @@
         </div>
     </nav>
     
+    <!-- SECCION HERO - Bienvenida principal con animaciones -->
     <section id="home" class="hero">
         <div class="hero-container">
+            <!-- Contenido principal del hero con animaciones 3D -->
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
                 <div class="hero-text">
+                    <!-- Saludo de bienvenida -->
                     <p class="hero-greeting">Hola, soy</p>
+                    
+                    <!-- Nombre principal con gradiente y efecto 3D -->
                     <h1 class="hero-title">Martin Eliu</h1>
+                    
+                    <!-- Titulo animado con efecto de escritura mecanica -->
                     <h2 class="hero-subtitle">
                         <span class="typing-text">Desarrollador Full Stack</span>
                     </h2>
+                    
+                    <!-- Descripcion corta del perfil -->
                     <p class="hero-description">
-                        Creando experiencias digitales innovadoras con codigo limpio y diseño excepcional.
+                        Creando experiencias digitales innovadoras con codigo limpio y diseno excepcional.
                         Transformo ideas en soluciones tecnologicas reales.
                     </p>
+                    
+                    <!-- Botones de accion principal y secundario -->
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">
                             <i class="fas fa-briefcase"></i>
@@ -61,6 +81,7 @@
                 </div>
             </div>
             
+            <!-- Indicador animado de scroll -->
             <div class="scroll-indicator">
                 <div class="mouse">
                     <div class="wheel"></div>
@@ -70,21 +91,25 @@
         </div>
     </section>
     
+    <!-- SECCION SOBRE MI - Informacion personal y destacados -->
     <section id="about" class="about">
         <div class="container">
+            <!-- Encabezado numerado de la seccion -->
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">01</span>
                 <h2 class="section-title">Sobre Mi</h2>
                 <div class="section-line"></div>
             </div>
             
+            <!-- Contenido dividido en dos columnas -->
             <div class="about-content">
+                <!-- Columna izquierda: Texto e informacion personal -->
                 <div class="about-text" data-aos="fade-right" data-aos-delay="200">
                     <div class="glass-card-3d">
                         <p>
                             Soy un desarrollador apasionado por crear soluciones digitales que marquen 
                             la diferencia. Con experiencia en desarrollo web full-stack, me especializo 
-                            en construir aplicaciones modernas, escalables y con un diseño excepcional.
+                            en construir aplicaciones modernas, escalables y con un diseno excepcional.
                         </p>
                         <p>
                             Mi enfoque se centra en escribir codigo limpio, eficiente y mantenible, 
@@ -103,7 +128,7 @@
                             </div>
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Diseño UI/UX Moderno</span>
+                                <span>Diseno UI/UX Moderno</span>
                             </div>
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle"></i>
@@ -113,7 +138,9 @@
                     </div>
                 </div>
                 
+                <!-- Columna derecha: Estadisticas con animacion de contadores -->
                 <div class="about-stats" data-aos="fade-left" data-aos-delay="400">
+                    <!-- Tarjeta de estadistica 1: Proyectos completados -->
                     <div class="stat-card-3d">
                         <div class="stat-icon">
                             <i class="fas fa-project-diagram"></i>
@@ -124,6 +151,7 @@
                         </div>
                     </div>
                     
+                    <!-- Tarjeta de estadistica 2: Lineas de codigo -->
                     <div class="stat-card-3d">
                         <div class="stat-icon">
                             <i class="fas fa-code"></i>
@@ -134,6 +162,7 @@
                         </div>
                     </div>
                     
+                    <!-- Tarjeta de estadistica 3: Tazas de cafe -->
                     <div class="stat-card-3d">
                         <div class="stat-icon">
                             <i class="fas fa-coffee"></i>
@@ -148,15 +177,19 @@
         </div>
     </section>
     
+    <!-- SECCION DE HABILIDADES - Muestra competencias tecnicas -->
     <section id="skills" class="skills">
         <div class="container">
+            <!-- Encabezado numerado de la seccion -->
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">02</span>
                 <h2 class="section-title">Habilidades Tecnicas</h2>
                 <div class="section-line"></div>
             </div>
             
+            <!-- Grid responsive de categorias de habilidades -->
             <div class="skills-grid">
+                <!-- CATEGORIA 1: Frontend Development -->
                 <div class="skill-category-3d" data-aos="fade-up" data-aos-delay="100">
                     <div class="skill-header">
                         <div class="skill-icon">
@@ -208,6 +241,7 @@
                     </div>
                 </div>
                 
+                <!-- CATEGORIA 2: Backend Development -->
                 <div class="skill-category-3d" data-aos="fade-up" data-aos-delay="200">
                     <div class="skill-header">
                         <div class="skill-icon">
@@ -216,7 +250,9 @@
                         <h3>Backend Development</h3>
                     </div>
                     
+                    <!-- Lista de habilidades backend -->
                     <div class="skill-list">
+                        <!-- Habilidad: Node.js -->
                         <div class="skill-item-3d">
                             <div class="skill-info">
                                 <span class="skill-name">Node.js</span>
@@ -227,6 +263,7 @@
                             </div>
                         </div>
                         
+                        <!-- Habilidad: Express.js -->
                         <div class="skill-item-3d">
                             <div class="skill-info">
                                 <span class="skill-name">Express.js</span>
@@ -237,6 +274,7 @@
                             </div>
                         </div>
                         
+                        <!-- Habilidad: MongoDB -->
                         <div class="skill-item-3d">
                             <div class="skill-info">
                                 <span class="skill-name">MongoDB</span>
@@ -247,6 +285,7 @@
                             </div>
                         </div>
                         
+                        <!-- Habilidad: REST APIs -->
                         <div class="skill-item-3d">
                             <div class="skill-info">
                                 <span class="skill-name">REST APIs</span>
@@ -259,6 +298,7 @@
                     </div>
                 </div>
                 
+                <!-- CATEGORIA 3: Herramientas & Otros -->
                 <div class="skill-category-3d" data-aos="fade-up" data-aos-delay="300">
                     <div class="skill-header">
                         <div class="skill-icon">
@@ -267,7 +307,9 @@
                         <h3>Herramientas & Otros</h3>
                     </div>
                     
+                    <!-- Lista de herramientas -->
                     <div class="skill-list">
+                        <!-- Herramienta: Git & GitHub -->
                         <div class="skill-item-3d">
                             <div class="skill-info">
                                 <span class="skill-name">Git & GitHub</span>
@@ -278,6 +320,7 @@
                             </div>
                         </div>
                         
+                        <!-- Herramienta: VS Code -->
                         <div class="skill-item-3d">
                             <div class="skill-info">
                                 <span class="skill-name">VS Code</span>
@@ -288,6 +331,7 @@
                             </div>
                         </div>
                         
+                        <!-- Herramienta: Docker -->
                         <div class="skill-item-3d">
                             <div class="skill-info">
                                 <span class="skill-name">Docker</span>
@@ -298,6 +342,7 @@
                             </div>
                         </div>
                         
+                        <!-- Herramienta: Figma -->
                         <div class="skill-item-3d">
                             <div class="skill-info">
                                 <span class="skill-name">Figma</span>
@@ -313,14 +358,17 @@
         </div>
     </section>
     
+    <!-- SECCION DE PROYECTOS - Galeria de trabajos destacados -->
     <section id="projects" class="projects">
         <div class="container">
+            <!-- Encabezado numerado de la seccion -->
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">03</span>
                 <h2 class="section-title">Proyectos Destacados</h2>
                 <div class="section-line"></div>
             </div>
             
+            <!-- Grid de proyectos cargado dinamicamente desde API -->
             <div id="projectsGrid" class="projects-grid">
                 <div class="loading-container">
                     <div class="spinner-3d"></div>
@@ -330,25 +378,28 @@
         </div>
     </section>
     
+    <!-- SECCION DE CONTACTO - Informacion y metodos de contacto -->
     <section id="contact" class="contact">
         <div class="container">
+            <!-- Encabezado numerado de la seccion -->
             <div class="section-header" data-aos="fade-up">
                 <span class="section-number">04</span>
                 <h2 class="section-title">Hablemos</h2>
                 <div class="section-line"></div>
             </div>
             
+            <!-- Tarjeta principal de contacto con glassmorphism -->
             <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
                 <div class="glass-card-3d contact-card">
-                    <h3 class="contact-title">¿Tienes un proyecto en mente?</h3>
+                    <h3 class="contact-title">Tienes un proyecto en mente?</h3>
                     <p class="contact-text">
                         Me encantaria saber de ti! Estoy siempre abierto a discutir nuevos proyectos, 
-                        ideas creativas o oportunidades para formar parte de tu vision. Trabajemos juntos 
+                        ideas creativas u oportunidades para formar parte de tu vision. Trabajemos juntos 
                         para crear algo increible.
                     </p>
                     
                     <div class="contact-info">
-                        <a href="mailto:tu@email.com" class="contact-item-3d">
+                        <a href="mailto:ayonmartin598@email.com" class="contact-item-3d">
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
@@ -358,23 +409,13 @@
                             </div>
                         </a>
                         
-                        <a href="https://linkedin.com/in/tuusuario" target="_blank" class="contact-item-3d">
-                            <div class="contact-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">LinkedIn</span>
-                                <span class="contact-value">linkedin.com/in/tuusuario</span>
-                            </div>
-                        </a>
-                        
                         <a href="https://github.com/EliuNoisy" target="_blank" class="contact-item-3d">
                             <div class="contact-icon">
                                 <i class="fab fa-github"></i>
                             </div>
                             <div class="contact-details">
                                 <span class="contact-label">GitHub</span>
-                                <span class="contact-value">github.com/EliuNoiy</span>
+                                <span class="contact-value">github.com/EliuNoisy</span>
                             </div>
                         </a>
                         
@@ -389,7 +430,8 @@
                         </a>
                     </div>
                     
-                    <a href="mailto:tu@email.com" class="btn btn-primary btn-large">
+                    <!-- Boton para enviar mensaje -->
+                    <a href="mailto:ayonmartin598@email.com" class="btn btn-primary btn-large">
                         <i class="fas fa-paper-plane"></i>
                         <span>Enviar Mensaje</span>
                     </a>
@@ -398,12 +440,15 @@
         </div>
     </section>
     
+    <!-- PIE DE PAGINA -->
     <footer class="footer">
         <div class="container">
+            <!-- Contenido del footer -->
             <div class="footer-content">
+                <!-- Seccion izquierda del footer -->
                 <div class="footer-left">
                     <p class="footer-text">
-                        Diseñado y desarrollado con 
+                        Disenado y desarrollado con 
                         <i class="fas fa-heart"></i> 
                         y mucho 
                         <i class="fas fa-coffee"></i>
@@ -411,14 +456,12 @@
                     <p class="footer-copy">&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
                 </div>
                 
+                <!-- Enlaces a redes sociales -->
                 <div class="social-links-3d">
-                    <a href="https://github.com/tuusuario" target="_blank" class="social-link-3d">
+                    <a href="https://github.com/EliuNoisy" target="_blank" class="social-link-3d">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://linkedin.com/in/tuusuario" target="_blank" class="social-link-3d">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://twitter.com/tuusuario" target="_blank" class="social-link-3d">
+                    <a href="https://x.com/MARTINGAMER421" target="_blank" class="social-link-3d">
                         <i class="fab fa-twitter"></i>
                     </a>
                     <a href="https://codepen.io/tuusuario" target="_blank" class="social-link-3d">
@@ -429,6 +472,7 @@
         </div>
     </footer>
     
+    <!-- Importacion de librerias JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
 </body>

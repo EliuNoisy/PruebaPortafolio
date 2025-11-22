@@ -1,9 +1,10 @@
-/* CONFIGURACION PRINCIPAL - CAMBIA TU ITSON ID AQUI */
+/* CONFIGURACION PRINCIPAL - Cambiar ID ITSON aqui */
 const ITSON_ID = '252028';
 const API_BASE = 'https://portfolio-api-three-black.vercel.app/api/v1';
 
-/* INICIALIZACION AL CARGAR LA PAGINA */
+/* INICIALIZACION - Se ejecuta cuando el DOM esta listo */
 document.addEventListener('DOMContentLoaded', function() {
+    /* Inicializar todas las funciones principales */
     initAOS();
     initNavigation();
     initTypingEffect();
@@ -13,24 +14,25 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
 });
 
-/* INICIALIZAR ANIMACIONES AOS */
+/* ANIMACIONES AOS - Animate On Scroll Library */
 function initAOS() {
     AOS.init({
-        duration: 1200,
-        once: true,
-        offset: 100,
-        easing: 'ease-out-cubic',
-        delay: 100
+        duration: 1200,          /* Duracion de animacion en ms */
+        once: true,              /* Animar solo una vez */
+        offset: 100,             /* Offset en pixels */
+        easing: 'ease-out-cubic',/* Tipo de easing */
+        delay: 100               /* Delay inicial */
     });
 }
 
-/* NAVEGACION */
+/* NAVEGACION - Manejo de menu y scroll activo */
 function initNavigation() {
     const navbar = document.getElementById('navbar');
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
     
+    /* Evento de scroll - Cambiar estilo navbar */
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
@@ -38,14 +40,17 @@ function initNavigation() {
             navbar.classList.remove('scrolled');
         }
         
+        /* Actualizar link activo */
         updateActiveLink();
     });
     
+    /* Evento click - Toggle menu mobile */
     mobileToggle.addEventListener('click', () => {
         mobileToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
     
+    /* Evento click - Cerrar menu al hacer click en link */
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             mobileToggle.classList.remove('active');
@@ -54,13 +59,14 @@ function initNavigation() {
     });
 }
 
-/* ACTUALIZAR LINK ACTIVO EN NAVEGACION */
+/* ACTUALIZAR LINK ACTIVO - Segun scroll position */
 function updateActiveLink() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
     
     let current = '';
     
+    /* Detectar seccion actual segun scroll */
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -70,6 +76,7 @@ function updateActiveLink() {
         }
     });
     
+    /* Actualizar clase active en links */
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -78,14 +85,15 @@ function updateActiveLink() {
     });
 }
 
-/* EFECTO DE ESCRITURA EN HERO */
+/* EFECTO DE ESCRITURA MECANICA - Typing effect en hero */
 function initTypingEffect() {
     const typingElement = document.querySelector('.typing-text');
     if (!typingElement) return;
     
+    /* Array de palabras a escribir */
     const words = [
         'Desarrollador Full Stack',
-        'Diseñador UI/UX',
+        'Disenador UI/UX',
         'Programador Frontend',
         'Arquitecto Backend',
         'Creador de Soluciones'
@@ -100,35 +108,43 @@ function initTypingEffect() {
         const currentWord = words[wordIndex];
         
         if (isDeleting) {
+            /* Borrar caracteres */
             typingElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
             typingSpeed = 50;
         } else {
+            /* Escribir caracteres */
             typingElement.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
             typingSpeed = 150;
         }
         
+        /* Palabra completa - Empezar a borrar */
         if (!isDeleting && charIndex === currentWord.length) {
             isDeleting = true;
-            typingSpeed = 2000;
-        } else if (isDeleting && charIndex === 0) {
+            typingSpeed = 2000; /* Pausa antes de borrar */
+        } 
+        /* Palabra vacia - Siguiente palabra */
+        else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            typingSpeed = 500;
+            typingSpeed = 500; /* Pausa antes de escribir */
         }
         
+        /* Llamar recursivamente con delay */
         setTimeout(type, typingSpeed);
     }
     
+    /* Iniciar animacion */
     type();
 }
 
-/* ANIMACION DE CONTADORES */
+/* ANIMACION DE CONTADORES - Numeros animados */
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
-    const speed = 200;
+    const speed = 200; /* Velocidad de animacion */
     
+    /* Opciones del Intersection Observer */
     const observerOptions = {
         threshold: 0.5,
         rootMargin: '0px'
@@ -140,6 +156,7 @@ function animateCounters() {
                 const counter = entry.target;
                 const target = parseInt(counter.getAttribute('data-target'));
                 
+                /* Funcion para actualizar contador */
                 const updateCount = () => {
                     const count = parseInt(counter.textContent);
                     const increment = target / speed;
@@ -148,16 +165,19 @@ function animateCounters() {
                         counter.textContent = Math.ceil(count + increment);
                         setTimeout(updateCount, 10);
                     } else {
+                        /* Formato con separadores de miles */
                         counter.textContent = target.toLocaleString();
                     }
                 };
                 
+                /* Iniciar animacion */
                 updateCount();
                 observer.unobserve(counter);
             }
         });
     }, observerOptions);
     
+    /* Observar todos los contadores */
     counters.forEach(counter => observer.observe(counter));
 }
 
@@ -165,6 +185,7 @@ function animateCounters() {
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress-3d');
     
+    /* Opciones del Intersection Observer */
     const observerOptions = {
         threshold: 0.5,
         rootMargin: '0px'
@@ -176,6 +197,7 @@ function animateSkillBars() {
                 const bar = entry.target;
                 const progress = bar.getAttribute('data-progress');
                 
+                /* Delay pequeno antes de animar */
                 setTimeout(() => {
                     bar.style.width = progress + '%';
                 }, 100);
@@ -185,10 +207,11 @@ function animateSkillBars() {
         });
     }, observerOptions);
     
+    /* Observar todas las barras */
     skillBars.forEach(bar => observer.observe(bar));
 }
 
-/* CARGAR PROYECTOS DESDE LA API */
+/* CARGAR PROYECTOS - Desde API */
 async function loadProjects() {
     const projectsGrid = document.getElementById('projectsGrid');
     const statNumber = document.querySelector('.stat-number[data-target="0"]');
@@ -196,8 +219,10 @@ async function loadProjects() {
     try {
         console.log(`Cargando proyectos para ITSON ID: ${ITSON_ID}`);
         
+        /* Llamada a API */
         const response = await fetch(`${API_BASE}/publicProjects/${ITSON_ID}`);
         
+        /* Verificar respuesta */
         if (!response.ok) {
             throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
@@ -206,10 +231,12 @@ async function loadProjects() {
         
         console.log('Proyectos cargados:', projects);
         
+        /* Actualizar numero de proyectos */
         if (statNumber && projects.length > 0) {
             statNumber.setAttribute('data-target', projects.length);
         }
         
+        /* Si no hay proyectos */
         if (!projects || projects.length === 0) {
             projectsGrid.innerHTML = `
                 <div class="empty-state">
@@ -224,6 +251,7 @@ async function loadProjects() {
             return;
         }
         
+        /* Renderizar proyectos */
         renderProjects(projects);
         
     } catch (error) {
@@ -242,12 +270,14 @@ async function loadProjects() {
     }
 }
 
-/* RENDERIZAR PROYECTOS EN LA INTERFAZ */
+/* RENDERIZAR PROYECTOS - Crear HTML para cada proyecto */
 function renderProjects(projects) {
     const projectsGrid = document.getElementById('projectsGrid');
     
+    /* Generar HTML de proyectos */
     projectsGrid.innerHTML = projects.map((project, index) => {
         const delay = index * 100;
+        /* Usar imagen del proyecto o placeholder */
         const imageUrl = project.images && project.images.length > 0 
             ? project.images[0] 
             : 'https://via.placeholder.com/400x280/667eea/ffffff?text=Proyecto';
@@ -264,6 +294,7 @@ function renderProjects(projects) {
                     
                     <p class="project-description-3d">${escapeHtml(project.description)}</p>
                     
+                    /* Mostrar tecnologias si existen */
                     ${project.technologies && project.technologies.length > 0 ? `
                         <div class="project-technologies-3d">
                             ${project.technologies.map(tech => 
@@ -272,6 +303,7 @@ function renderProjects(projects) {
                         </div>
                     ` : ''}
                     
+                    /* Enlaces de GitHub y Demo */
                     <div class="project-links-3d">
                         ${project.repository ? `
                             <a href="${escapeHtml(project.repository)}" 
@@ -303,10 +335,11 @@ function renderProjects(projects) {
         `;
     }).join('');
     
+    /* Refrescar animaciones AOS */
     AOS.refresh();
 }
 
-/* ESCAPAR HTML PARA PREVENIR XSS */
+/* ESCAPAR HTML - Prevenir XSS */
 function escapeHtml(text) {
     if (!text) return '';
     const div = document.createElement('div');
@@ -314,7 +347,7 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-/* SCROLL SUAVE PARA TODOS LOS ENLACES */
+/* SCROLL SUAVE - Para enlaces ancla */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -322,8 +355,10 @@ function initSmoothScroll() {
             const target = document.querySelector(this.getAttribute('href'));
             
             if (target) {
+                /* Calcular posicion considerando navbar fijo */
                 const offsetTop = target.offsetTop - 80;
                 
+                /* Scroll suave */
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -333,10 +368,10 @@ function initSmoothScroll() {
     });
 }
 
-/* MENSAJE EN CONSOLA */
-console.log('%c¡Hola Desarrollador! 👋', 'font-size: 24px; font-weight: bold; color: #667eea;');
+/* MENSAJES EN CONSOLA - Bienvenida */
+console.log('%cHola Desarrollador! 👋', 'font-size: 24px; font-weight: bold; color: #667eea;');
 console.log('%cGracias por visitar mi portafolio', 'font-size: 16px; color: #f093fb;');
-console.log('%cSi estas interesado en trabajar juntos, ¡contactame!', 'font-size: 14px; color: #4facfe;');
+console.log('%cSi estas interesado en trabajar juntos, contactame!', 'font-size: 14px; color: #4facfe;');
 console.log('%c\nPortafolio desarrollado con:', 'font-size: 12px; font-weight: bold;');
 console.log('- HTML5 & CSS3 (Glassmorphism 3D)');
 console.log('- JavaScript Vanilla (ES6+)');
@@ -345,11 +380,11 @@ console.log('- API REST personalizada');
 
 /* DETECTAR MODO OSCURO DEL SISTEMA */
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    console.log('%c✓ Modo oscuro detectado', 'color: #a855f7;');
+    console.log('%cModo oscuro detectado', 'color: #a855f7;');
 }
 
-/* PERFORMANCE MONITORING */
+/* MONITOREO DE PERFORMANCE */
 window.addEventListener('load', () => {
     const loadTime = performance.now();
-    console.log(`%c⚡ Pagina cargada en ${Math.round(loadTime)}ms`, 'color: #4facfe; font-weight: bold;');
+    console.log(`%cPagina cargada en ${Math.round(loadTime)}ms`, 'color: #4facfe; font-weight: bold;');
 });
