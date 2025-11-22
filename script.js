@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
 /* ANIMACIONES AOS - Animate On Scroll Library */
 function initAOS() {
     AOS.init({
-        duration: 1200,          /* Duracion de animacion en ms */
-        once: true,              /* Animar solo una vez */
-        offset: 100,             /* Offset en pixels */
-        easing: 'ease-out-cubic',/* Tipo de easing */
-        delay: 100               /* Delay inicial */
+        duration: 1200,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic',
+        delay: 100
     });
 }
 
@@ -108,43 +108,36 @@ function initTypingEffect() {
         const currentWord = words[wordIndex];
         
         if (isDeleting) {
-            /* Borrar caracteres */
             typingElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
             typingSpeed = 50;
         } else {
-            /* Escribir caracteres */
             typingElement.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
             typingSpeed = 150;
         }
         
-        /* Palabra completa - Empezar a borrar */
         if (!isDeleting && charIndex === currentWord.length) {
             isDeleting = true;
-            typingSpeed = 2000; /* Pausa antes de borrar */
+            typingSpeed = 2000;
         } 
-        /* Palabra vacia - Siguiente palabra */
         else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            typingSpeed = 500; /* Pausa antes de escribir */
+            typingSpeed = 500;
         }
         
-        /* Llamar recursivamente con delay */
         setTimeout(type, typingSpeed);
     }
     
-    /* Iniciar animacion */
     type();
 }
 
 /* ANIMACION DE CONTADORES - Numeros animados */
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
-    const speed = 200; /* Velocidad de animacion */
+    const speed = 200;
     
-    /* Opciones del Intersection Observer */
     const observerOptions = {
         threshold: 0.5,
         rootMargin: '0px'
@@ -156,7 +149,6 @@ function animateCounters() {
                 const counter = entry.target;
                 const target = parseInt(counter.getAttribute('data-target'));
                 
-                /* Funcion para actualizar contador */
                 const updateCount = () => {
                     const count = parseInt(counter.textContent);
                     const increment = target / speed;
@@ -165,19 +157,16 @@ function animateCounters() {
                         counter.textContent = Math.ceil(count + increment);
                         setTimeout(updateCount, 10);
                     } else {
-                        /* Formato con separadores de miles */
                         counter.textContent = target.toLocaleString();
                     }
                 };
                 
-                /* Iniciar animacion */
                 updateCount();
                 observer.unobserve(counter);
             }
         });
     }, observerOptions);
     
-    /* Observar todos los contadores */
     counters.forEach(counter => observer.observe(counter));
 }
 
@@ -185,7 +174,6 @@ function animateCounters() {
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress-3d');
     
-    /* Opciones del Intersection Observer */
     const observerOptions = {
         threshold: 0.5,
         rootMargin: '0px'
@@ -197,7 +185,6 @@ function animateSkillBars() {
                 const bar = entry.target;
                 const progress = bar.getAttribute('data-progress');
                 
-                /* Delay pequeno antes de animar */
                 setTimeout(() => {
                     bar.style.width = progress + '%';
                 }, 100);
@@ -207,7 +194,6 @@ function animateSkillBars() {
         });
     }, observerOptions);
     
-    /* Observar todas las barras */
     skillBars.forEach(bar => observer.observe(bar));
 }
 
@@ -219,10 +205,8 @@ async function loadProjects() {
     try {
         console.log(`Cargando proyectos para ITSON ID: ${ITSON_ID}`);
         
-        /* Llamada a API */
         const response = await fetch(`${API_BASE}/publicProjects/${ITSON_ID}`);
         
-        /* Verificar respuesta */
         if (!response.ok) {
             throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
@@ -231,12 +215,10 @@ async function loadProjects() {
         
         console.log('Proyectos cargados:', projects);
         
-        /* Actualizar numero de proyectos */
         if (statNumber && projects.length > 0) {
             statNumber.setAttribute('data-target', projects.length);
         }
         
-        /* Si no hay proyectos */
         if (!projects || projects.length === 0) {
             projectsGrid.innerHTML = `
                 <div class="empty-state">
@@ -251,7 +233,6 @@ async function loadProjects() {
             return;
         }
         
-        /* Renderizar proyectos */
         renderProjects(projects);
         
     } catch (error) {
@@ -274,10 +255,8 @@ async function loadProjects() {
 function renderProjects(projects) {
     const projectsGrid = document.getElementById('projectsGrid');
     
-    /* Generar HTML de proyectos */
     projectsGrid.innerHTML = projects.map((project, index) => {
         const delay = index * 100;
-        /* Usar imagen del proyecto o placeholder */
         const imageUrl = project.images && project.images.length > 0 
             ? project.images[0] 
             : 'https://via.placeholder.com/400x280/667eea/ffffff?text=Proyecto';
@@ -294,7 +273,6 @@ function renderProjects(projects) {
                     
                     <p class="project-description-3d">${escapeHtml(project.description)}</p>
                     
-                    /* Mostrar tecnologias si existen */
                     ${project.technologies && project.technologies.length > 0 ? `
                         <div class="project-technologies-3d">
                             ${project.technologies.map(tech => 
@@ -303,7 +281,6 @@ function renderProjects(projects) {
                         </div>
                     ` : ''}
                     
-                    /* Enlaces de GitHub y Demo */
                     <div class="project-links-3d">
                         ${project.repository ? `
                             <a href="${escapeHtml(project.repository)}" 
@@ -335,7 +312,6 @@ function renderProjects(projects) {
         `;
     }).join('');
     
-    /* Refrescar animaciones AOS */
     AOS.refresh();
 }
 
@@ -355,10 +331,8 @@ function initSmoothScroll() {
             const target = document.querySelector(this.getAttribute('href'));
             
             if (target) {
-                /* Calcular posicion considerando navbar fijo */
                 const offsetTop = target.offsetTop - 80;
                 
-                /* Scroll suave */
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
