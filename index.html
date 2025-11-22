@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio 3D Profesional</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                Portafolio
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Inicio</a>
+                <a href="#about" class="nav-link">Sobre Mi</a>
+                <a href="#skills" class="nav-link">Habilidades</a>
+                <a href="#projects" class="nav-link">Proyectos</a>
+                <a href="#contact" class="nav-link">Contacto</a>
+            </div>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+                <div class="hero-text">
+                    <p class="hero-greeting">Hola, soy</p>
+                    <h1 class="hero-title">Martin Eliu</h1>
+                    <h2 class="hero-subtitle">
+                        <span class="typing-text">Desarrollador Full Stack</span>
+                    </h2>
+                    <p class="hero-description">
+                        Creando experiencias digitales innovadoras con codigo limpio y diseño excepcional.
+                        Transformo ideas en soluciones tecnologicas reales.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Ver Proyectos</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contactar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>Scroll</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Sobre Mi</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right" data-aos-delay="200">
+                    <div class="glass-card-3d">
+                        <p>
+                            Soy un desarrollador apasionado por crear soluciones digitales que marquen 
+                            la diferencia. Con experiencia en desarrollo web full-stack, me especializo 
+                            en construir aplicaciones modernas, escalables y con un diseño excepcional.
+                        </p>
+                        <p>
+                            Mi enfoque se centra en escribir codigo limpio, eficiente y mantenible, 
+                            siempre buscando aprender nuevas tecnologias y mejorar constantemente 
+                            mis habilidades tecnicas y creativas.
+                        </p>
+                        <p>
+                            Cada proyecto es una oportunidad para innovar y superar expectativas, 
+                            combinando funcionalidad con experiencias de usuario memorables.
+                        </p>
+                        
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Codigo Limpio y Escalable</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Diseño UI/UX Moderno</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Responsive y Accesible</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats" data-aos="fade-left" data-aos-delay="400">
+                    <div class="stat-card-3d">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="0">0</h3>
+                            <p class="stat-label">Proyectos Completados</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card-3d">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="10000">0</h3>
+                            <p class="stat-label">Lineas de Codigo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card-3d">
+                        <div class="stat-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="500">0</h3>
+                            <p class="stat-label">Tazas de Cafe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Habilidades Tecnicas</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category-3d" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                    </div>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML5 & CSS3</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="95"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript (ES6+)</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">React.js</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">Vue.js</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category-3d" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                    </div>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="88"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">Express.js</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">REST APIs</span>
+                                <span class="skill-percentage">92%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="92"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category-3d" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Herramientas & Otros</h3>
+                    </div>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">Git & GitHub</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">VS Code</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="95"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="75"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item-3d">
+                            <div class="skill-info">
+                                <span class="skill-name">Figma</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar-3d">
+                                <div class="skill-progress-3d" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div id="projectsGrid" class="projects-grid">
+                <div class="loading-container">
+                    <div class="spinner-3d"></div>
+                    <p>Cargando proyectos increibles...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Hablemos</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="glass-card-3d contact-card">
+                    <h3 class="contact-title">¿Tienes un proyecto en mente?</h3>
+                    <p class="contact-text">
+                        Me encantaria saber de ti! Estoy siempre abierto a discutir nuevos proyectos, 
+                        ideas creativas o oportunidades para formar parte de tu vision. Trabajemos juntos 
+                        para crear algo increible.
+                    </p>
+                    
+                    <div class="contact-info">
+                        <a href="mailto:tu@email.com" class="contact-item-3d">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">ayonmartin598@email.com</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://linkedin.com/in/tuusuario" target="_blank" class="contact-item-3d">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">LinkedIn</span>
+                                <span class="contact-value">linkedin.com/in/tuusuario</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/EliuNoisy" target="_blank" class="contact-item-3d">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">GitHub</span>
+                                <span class="contact-value">github.com/EliuNoiy</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://x.com/MARTINGAMER421" target="_blank" class="contact-item-3d">
+                            <div class="contact-icon">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Twitter</span>
+                                <span class="contact-value">@MARTINGAMER421</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <a href="mailto:tu@email.com" class="btn btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Enviar Mensaje</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p class="footer-text">
+                        Diseñado y desarrollado con 
+                        <i class="fas fa-heart"></i> 
+                        y mucho 
+                        <i class="fas fa-coffee"></i>
+                    </p>
+                    <p class="footer-copy">&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
+                </div>
+                
+                <div class="social-links-3d">
+                    <a href="https://github.com/tuusuario" target="_blank" class="social-link-3d">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/tuusuario" target="_blank" class="social-link-3d">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/tuusuario" target="_blank" class="social-link-3d">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://codepen.io/tuusuario" target="_blank" class="social-link-3d">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
