@@ -1,8 +1,8 @@
-/* CONFIGURACION PRINCIPAL - Cambiar ID ITSON aqui */
+/*  ID ITSON aqui */
 const ITSON_ID = '252028';
 const API_BASE = 'https://portfolio-api-three-black.vercel.app/api/v1';
 
-/* INICIALIZACION - Se ejecuta cuando el DOM esta listo */
+/* Se ejecuta cuando el DOM esta listo */
 document.addEventListener('DOMContentLoaded', function() {
     /* Inicializar todas las funciones principales */
     initAOS();
@@ -92,11 +92,11 @@ function initTypingEffect() {
     
     /* Array de palabras a escribir */
     const words = [
+        'Estudiante de Ingenieria de software',
         'Desarrollador Full Stack',
-        'Disenador UI/UX',
-        'Programador Frontend',
-        'Arquitecto Backend',
-        'Creador de Soluciones'
+        'Amante del Codigo',
+        'Creador de Proyectos',
+        'Aprendiz Constante'
     ];
     
     let wordIndex = 0;
@@ -342,15 +342,6 @@ function initSmoothScroll() {
     });
 }
 
-/* MENSAJES EN CONSOLA - Bienvenida */
-console.log('%cHola Desarrollador! 👋', 'font-size: 24px; font-weight: bold; color: #667eea;');
-console.log('%cGracias por visitar mi portafolio', 'font-size: 16px; color: #f093fb;');
-console.log('%cSi estas interesado en trabajar juntos, contactame!', 'font-size: 14px; color: #4facfe;');
-console.log('%c\nPortafolio desarrollado con:', 'font-size: 12px; font-weight: bold;');
-console.log('- HTML5 & CSS3 (Glassmorphism 3D)');
-console.log('- JavaScript Vanilla (ES6+)');
-console.log('- AOS (Animate On Scroll)');
-console.log('- API REST personalizada');
 
 /* DETECTAR MODO OSCURO DEL SISTEMA */
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
